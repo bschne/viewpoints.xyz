@@ -60,7 +60,12 @@ const PollAdminPage = async ({ params }: PollAdminPageProps) => {
   return (
     <main className="grid gap-2 pt-12">
       <div className="flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-bold text-white">{poll.title}</h1>
+        <Link
+          prefetch={false}
+          href={`/polls/${poll.slug}`}
+        >
+          <h1 className="text-2xl font-bold text-white">← {poll.title}</h1>
+        </Link>
       </div>
       <PollAdminForm
         poll={poll}
